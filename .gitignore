@@ -1,0 +1,8 @@
+
+*.xcuserstate
+*.xcworkspacedata
+*.xcscheme
+*.lock
+Pods/*
+PYQFeed.xcodeproj/xcuserdata/*
+PYQFeed.xcworkspace

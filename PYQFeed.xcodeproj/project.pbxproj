@@ -1,0 +1,412 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C8BA5E867951ACBB4ECD749D /* libPods-PYQFeed.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FDBBA32B4E993C4BC11FDAE /* libPods-PYQFeed.a */; };
+		FE37E42F1D6597EF00A13A17 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = FE37E42E1D6597EF00A13A17 /* data.json */; };
+		FE5058321D645C5700E45CD1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5058311D645C5700E45CD1 /* main.m */; };
+		FE5058351D645C5700E45CD1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5058341D645C5700E45CD1 /* AppDelegate.m */; };
+		FE5058381D645C5700E45CD1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5058371D645C5700E45CD1 /* ViewController.m */; };
+		FE50583B1D645C5700E45CD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE5058391D645C5700E45CD1 /* Main.storyboard */; };
+		FE50583D1D645C5700E45CD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE50583C1D645C5700E45CD1 /* Assets.xcassets */; };
+		FE5058401D645C5700E45CD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE50583E1D645C5700E45CD1 /* LaunchScreen.storyboard */; };
+		FE50584C1D655A5A00E45CD1 /* FpsLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE50584B1D655A5A00E45CD1 /* FpsLabel.m */; };
+		FE50584F1D655A6E00E45CD1 /* WeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = FE50584E1D655A6E00E45CD1 /* WeakProxy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0FDBBA32B4E993C4BC11FDAE /* libPods-PYQFeed.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PYQFeed.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		192DDC94371598EF5C220FA3 /* Pods-PYQFeed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PYQFeed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PYQFeed/Pods-PYQFeed.debug.xcconfig"; sourceTree = "<group>"; };
+		3C307AB83CEDB3D081D45573 /* Pods-PYQFeed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PYQFeed.release.xcconfig"; path = "Pods/Target Support Files/Pods-PYQFeed/Pods-PYQFeed.release.xcconfig"; sourceTree = "<group>"; };
+		FE37E42E1D6597EF00A13A17 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		FE50582D1D645C5700E45CD1 /* PYQFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PYQFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE5058311D645C5700E45CD1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FE5058331D645C5700E45CD1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FE5058341D645C5700E45CD1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FE5058361D645C5700E45CD1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FE5058371D645C5700E45CD1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FE50583A1D645C5700E45CD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FE50583C1D645C5700E45CD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FE50583F1D645C5700E45CD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FE5058411D645C5700E45CD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE50584A1D655A5A00E45CD1 /* FpsLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FpsLabel.h; sourceTree = "<group>"; };
+		FE50584B1D655A5A00E45CD1 /* FpsLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FpsLabel.m; sourceTree = "<group>"; };
+		FE50584D1D655A6E00E45CD1 /* WeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeakProxy.h; sourceTree = "<group>"; };
+		FE50584E1D655A6E00E45CD1 /* WeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeakProxy.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FE50582A1D645C5700E45CD1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8BA5E867951ACBB4ECD749D /* libPods-PYQFeed.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1496FEB5A4274EC5EFBF8F08 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0FDBBA32B4E993C4BC11FDAE /* libPods-PYQFeed.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D8850BF608E8E8A2DBB11FA6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				192DDC94371598EF5C220FA3 /* Pods-PYQFeed.debug.xcconfig */,
+				3C307AB83CEDB3D081D45573 /* Pods-PYQFeed.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FE5058241D645C5700E45CD1 = {
+			isa = PBXGroup;
+			children = (
+				FE50582F1D645C5700E45CD1 /* PYQFeed */,
+				FE50582E1D645C5700E45CD1 /* Products */,
+				D8850BF608E8E8A2DBB11FA6 /* Pods */,
+				1496FEB5A4274EC5EFBF8F08 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FE50582E1D645C5700E45CD1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE50582D1D645C5700E45CD1 /* PYQFeed.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FE50582F1D645C5700E45CD1 /* PYQFeed */ = {
+			isa = PBXGroup;
+			children = (
+				FE5058491D655A4500E45CD1 /* Utils */,
+				FE5058331D645C5700E45CD1 /* AppDelegate.h */,
+				FE5058341D645C5700E45CD1 /* AppDelegate.m */,
+				FE5058361D645C5700E45CD1 /* ViewController.h */,
+				FE5058371D645C5700E45CD1 /* ViewController.m */,
+				FE5058391D645C5700E45CD1 /* Main.storyboard */,
+				FE50583C1D645C5700E45CD1 /* Assets.xcassets */,
+				FE50583E1D645C5700E45CD1 /* LaunchScreen.storyboard */,
+				FE5058411D645C5700E45CD1 /* Info.plist */,
+				FE5058301D645C5700E45CD1 /* Supporting Files */,
+			);
+			path = PYQFeed;
+			sourceTree = "<group>";
+		};
+		FE5058301D645C5700E45CD1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FE37E42E1D6597EF00A13A17 /* data.json */,
+				FE5058311D645C5700E45CD1 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FE5058491D655A4500E45CD1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FE50584A1D655A5A00E45CD1 /* FpsLabel.h */,
+				FE50584B1D655A5A00E45CD1 /* FpsLabel.m */,
+				FE50584D1D655A6E00E45CD1 /* WeakProxy.h */,
+				FE50584E1D655A6E00E45CD1 /* WeakProxy.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FE50582C1D645C5700E45CD1 /* PYQFeed */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE5058441D645C5700E45CD1 /* Build configuration list for PBXNativeTarget "PYQFeed" */;
+			buildPhases = (
+				CBEDDF89FA7F982A66F65078 /* [CP] Check Pods Manifest.lock */,
+				FE5058291D645C5700E45CD1 /* Sources */,
+				FE50582A1D645C5700E45CD1 /* Frameworks */,
+				FE50582B1D645C5700E45CD1 /* Resources */,
+				93A8079CEBB5815BB7A82989 /* [CP] Embed Pods Frameworks */,
+				C5BB34BDE9270212680E1970 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PYQFeed;
+			productName = PYQFeed;
+			productReference = FE50582D1D645C5700E45CD1 /* PYQFeed.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FE5058251D645C5700E45CD1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = DEVIL;
+				TargetAttributes = {
+					FE50582C1D645C5700E45CD1 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = D7BX896CL3;
+					};
+				};
+			};
+			buildConfigurationList = FE5058281D645C5700E45CD1 /* Build configuration list for PBXProject "PYQFeed" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FE5058241D645C5700E45CD1;
+			productRefGroup = FE50582E1D645C5700E45CD1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FE50582C1D645C5700E45CD1 /* PYQFeed */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FE50582B1D645C5700E45CD1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE5058401D645C5700E45CD1 /* LaunchScreen.storyboard in Resources */,
+				FE50583D1D645C5700E45CD1 /* Assets.xcassets in Resources */,
+				FE50583B1D645C5700E45CD1 /* Main.storyboard in Resources */,
+				FE37E42F1D6597EF00A13A17 /* data.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		93A8079CEBB5815BB7A82989 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PYQFeed/Pods-PYQFeed-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5BB34BDE9270212680E1970 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PYQFeed/Pods-PYQFeed-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBEDDF89FA7F982A66F65078 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FE5058291D645C5700E45CD1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE50584F1D655A6E00E45CD1 /* WeakProxy.m in Sources */,
+				FE5058381D645C5700E45CD1 /* ViewController.m in Sources */,
+				FE5058351D645C5700E45CD1 /* AppDelegate.m in Sources */,
+				FE50584C1D655A5A00E45CD1 /* FpsLabel.m in Sources */,
+				FE5058321D645C5700E45CD1 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FE5058391D645C5700E45CD1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE50583A1D645C5700E45CD1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FE50583E1D645C5700E45CD1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE50583F1D645C5700E45CD1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FE5058421D645C5700E45CD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FE5058431D645C5700E45CD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FE5058451D645C5700E45CD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 192DDC94371598EF5C220FA3 /* Pods-PYQFeed.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PYQFeed/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.devil.PYQFeed;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FE5058461D645C5700E45CD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C307AB83CEDB3D081D45573 /* Pods-PYQFeed.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PYQFeed/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.devil.PYQFeed;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FE5058281D645C5700E45CD1 /* Build configuration list for PBXProject "PYQFeed" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE5058421D645C5700E45CD1 /* Debug */,
+				FE5058431D645C5700E45CD1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE5058441D645C5700E45CD1 /* Build configuration list for PBXNativeTarget "PYQFeed" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE5058451D645C5700E45CD1 /* Debug */,
+				FE5058461D645C5700E45CD1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FE5058251D645C5700E45CD1 /* Project object */;
+}
