@@ -8,12 +8,14 @@
 
 #import "ViewController.h"
 #import "FpsLabel.h"
+#import "NSString+Additions.h"
 #import <Masonry.h>
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) FpsLabel *fpsLabel;
+@property (nonatomic, strong) NSMutableArray *datas;
 
 @end
 
@@ -22,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.datas = [NSMutableArray array];
     self.fpsLabel = [[FpsLabel alloc] init];
     self.fpsLabel.alpha = 0;
     [self.view addSubview:self.fpsLabel];
@@ -42,6 +45,73 @@
                                                              options:NSJSONReadingAllowFragments
                                                                error:nil];
         array = dict[@"data"];
+    }
+    
+    for (NSDictionary *item in array)
+    {
+        CGSize nickSize = [item[@"nickname"] sizeWithConstrainedToWidth:ScreenWidth / 2.0
+                                                               fromFont:kNicknameFont
+                                                              lineSpace:0
+                                                          lineBreakMode:kCTLineBreakByTruncatingTail];
+        
+        CGSize contentSize = [item[@"content"] sizeWithConstrainedToWidth:kContentTextWidth
+                                                                 fromFont:kContentTextFont
+                                                                lineSpace:5
+                                                            lineBreakMode:kCTLineBreakByWordWrapping];
+        
+        NSMutableDictionary *mItem = [NSMutableDictionary dictionaryWithDictionary:item];
+        mItem[@"nickSize"] = [NSValue valueWithCGSize:nickSize];
+        mItem[@"contentSize"] = [NSValue valueWithCGSize:contentSize];
+        
+        NSString *type = item[@"type"];
+        NSArray *resources = item[@"resources"];
+        if (resources.count > 0)
+        {
+            if (resources.count == 1)
+            {
+                NSDictionary *res = resources.firstObject;
+                if (res)
+                {
+                    CGFloat width = [res[@"width"] floatValue];
+                    CGFloat height = [res[@"height"] floatValue];
+                    if (width > height)
+                    {
+                        if (width > kMaxContentImageSide)
+                        {
+                            CGFloat scale = kMaxContentImageSide / width;
+                            mItem[@"resHeight"] = @((scale * height) / 2.0);
+                            mItem[@"resWidth"] = @(kMaxContentImageSide / 2.0);
+                        }
+                        else
+                        {
+                            mItem[@"resHeight"] = @(width / 2.0);
+                            mItem[@"resWidth"] = @(height / 2.0);
+                        }
+                    }
+                    else
+                    {
+                        if (height > kMaxContentImageSide)
+                        {
+                            CGFloat scale = kMaxContentImageSide / height;
+                            mItem[@"resHeight"] = @(kMaxContentImageSide / 2.0);
+                            mItem[@"resWidth"] = @(scale * width / 2.0);
+                        }
+                        else
+                        {
+                            mItem[@"resHeight"] = @(height / 2.0);
+                            mItem[@"resWidth"] = @(width / 2.0);
+                        }
+                    }
+                }
+                else
+                {
+                    NSInteger row = (resources.count - 1) / 3 + 1;
+                    mItem[@"resHeight"] = @(row * kContentImageWidth + (row - 1) * kImageGap);
+                    mItem[@"resWidth"] = @(kContentImageWidth);
+                }
+            }
+        }
+        [self.datas addObject:mItem];
     }
 }
 
