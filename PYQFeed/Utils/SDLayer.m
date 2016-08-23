@@ -25,4 +25,84 @@ static const CFIndex POPAnimationApplyRunLoopOrder = CATransactionCommitRunLoopO
 
 @implementation SDLayer
 
+- (instancetype)initWithType:(NSString *)type
+{
+    if (self = [super init]) {
+        _type = type;
+    }
+    
+    return self;
+}
+
+- (void)setContentsWithUrl:(NSString *)url
+{
+    self.contents = (__bridge id)([UIImage imageNamed:@"placeholder"].CGImage);
+    @weakify(self)
+    SDWebImageManager *manager = [SDWebImageManager sharedManager];
+    [manager downloadImageWithURL:[NSURL URLWithString:url]
+                          options:SDWebImageCacheMemoryOnly
+                         progress:nil
+                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                            
+                            if (image)
+                            {
+                                @strongify(self)
+                                dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                                    
+                                    if (!_observer) {
+                                        _observer = CFRunLoopObserverCreateWithHandler(kCFAllocatorDefault, kCFRunLoopBeforeWaiting | kCFRunLoopExit, false, POPAnimationApplyRunLoopOrder, ^(CFRunLoopObserverRef observer, CFRunLoopActivity activity) {
+                                            self.contents = (__bridge id)(image.CGImage);
+                                        });
+                                        
+                                        if (_observer)
+                                        {
+                                            CFRunLoopAddObserver(CFRunLoopGetMain(), _observer, kCFRunLoopCommonModes);
+                                        }
+                                    }
+                                });
+                                self.originImage = image;
+                            }
+                        }];
+}
+
+- (void)highlightedImage
+{
+    if (!self.highlightImage) {
+        self.highlightImage = [self.originImage colorizeImageWithColor:[UIColor grayColor]];
+    }
+    
+    self.contents = (__bridge id)(self.highlightImage.CGImage);
+}
+
+- (void)unhighlightedImage
+{
+    self.contents = (__bridge id)(self.originImage.CGImage);
+}
+
+- (void)touchCancelPoint
+{
+    if (!self.originImage) {
+        return;
+    }
+    
+    if ([self.type isEqualToString:@"img"]) {
+        [self unhighlightedImage];
+    }
+}
+
+- (BOOL)touchEndPoint:(CGPoint)point action:(VoidResultBlock)block
+{
+    if (!self.originImage) {
+        return NO;
+    }
+    
+    if ([self.type isEqualToString:@"img"]) {
+        [self unhighlightedImage];
+    }
+    
+    if (CGRectContainsRect(self.frame, point) && CGRectContainsPoint(self.frame, <#CGPoint point#>)) {
+        <#statements#>
+    }
+}
+
 @end
