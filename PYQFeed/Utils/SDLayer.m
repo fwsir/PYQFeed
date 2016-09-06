@@ -100,8 +100,21 @@ static const CFIndex POPAnimationApplyRunLoopOrder = CATransactionCommitRunLoopO
         [self unhighlightedImage];
     }
     
-    if (CGRectContainsRect(self.frame, point) && CGRectContainsPoint(self.frame, <#CGPoint point#>)) {
-        <#statements#>
+    if (CGRectContainsPoint(self.frame, point) && CGRectContainsPoint(self.frame, self.startLocation)) {
+        block();
+        
+        return YES;
+    }
+    return NO;
+}
+
+- (void)clearPendingListObserver
+{
+    if (_observer)
+    {
+        CFRunLoopRemoveObserver(CFRunLoopGetMain(), _observer, kCFRunLoopCommonModes);
+        CFRelease(_observer);
+        _observer = NULL;
     }
 }
 

@@ -44,27 +44,27 @@
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                              options:NSJSONReadingAllowFragments
                                                                error:nil];
-        array = dict[@"data"];
+        array = dict[DataKey];
     }
     
     for (NSDictionary *item in array)
     {
-        CGSize nickSize = [item[@"nickname"] sizeWithConstrainedToWidth:ScreenWidth / 2.0
+        CGSize nickSize = [item[NickNameKey] sizeWithConstrainedToWidth:ScreenWidth / 2.0
                                                                fromFont:kNicknameFont
                                                               lineSpace:0
                                                           lineBreakMode:kCTLineBreakByTruncatingTail];
         
-        CGSize contentSize = [item[@"content"] sizeWithConstrainedToWidth:kContentTextWidth
+        CGSize contentSize = [item[ContentKey] sizeWithConstrainedToWidth:kContentTextWidth
                                                                  fromFont:kContentTextFont
                                                                 lineSpace:5
                                                             lineBreakMode:kCTLineBreakByWordWrapping];
         
         NSMutableDictionary *mItem = [NSMutableDictionary dictionaryWithDictionary:item];
-        mItem[@"nickSize"] = [NSValue valueWithCGSize:nickSize];
-        mItem[@"contentSize"] = [NSValue valueWithCGSize:contentSize];
+        mItem[NickSizeKey] = [NSValue valueWithCGSize:nickSize];
+        mItem[ContentSizeKey] = [NSValue valueWithCGSize:contentSize];
         
-        NSString *type = item[@"type"];
-        NSArray *resources = item[@"resources"];
+        NSString *type = item[TypeKey];
+        NSArray *resources = item[ResourcesKey];
         if (resources.count > 0)
         {
             if (resources.count == 1)
@@ -72,20 +72,20 @@
                 NSDictionary *res = resources.firstObject;
                 if (res)
                 {
-                    CGFloat width = [res[@"width"] floatValue];
-                    CGFloat height = [res[@"height"] floatValue];
+                    CGFloat width = [res[WidthKey] floatValue];
+                    CGFloat height = [res[HeightKey] floatValue];
                     if (width > height)
                     {
                         if (width > kMaxContentImageSide)
                         {
                             CGFloat scale = kMaxContentImageSide / width;
-                            mItem[@"resHeight"] = @((scale * height) / 2.0);
-                            mItem[@"resWidth"] = @(kMaxContentImageSide / 2.0);
+                            mItem[ResHeightKey] = @((scale * height) / 2.0);
+                            mItem[ResWidthKey] = @(kMaxContentImageSide / 2.0);
                         }
                         else
                         {
-                            mItem[@"resHeight"] = @(width / 2.0);
-                            mItem[@"resWidth"] = @(height / 2.0);
+                            mItem[ResWidthKey] = @(width / 2.0);
+                            mItem[ResHeightKey] = @(height / 2.0);
                         }
                     }
                     else
@@ -93,21 +93,21 @@
                         if (height > kMaxContentImageSide)
                         {
                             CGFloat scale = kMaxContentImageSide / height;
-                            mItem[@"resHeight"] = @(kMaxContentImageSide / 2.0);
-                            mItem[@"resWidth"] = @(scale * width / 2.0);
+                            mItem[ResHeightKey] = @(kMaxContentImageSide / 2.0);
+                            mItem[ResWidthKey] = @(scale * width / 2.0);
                         }
                         else
                         {
-                            mItem[@"resHeight"] = @(height / 2.0);
-                            mItem[@"resWidth"] = @(width / 2.0);
+                            mItem[ResHeightKey] = @(height / 2.0);
+                            mItem[ResWidthKey] = @(width / 2.0);
                         }
                     }
                 }
                 else
                 {
                     NSInteger row = (resources.count - 1) / 3 + 1;
-                    mItem[@"resHeight"] = @(row * kContentImageWidth + (row - 1) * kImageGap);
-                    mItem[@"resWidth"] = @(kContentImageWidth);
+                    mItem[ResHeightKey] = @(row * kContentImageWidth + (row - 1) * kImageGap);
+                    mItem[ResWidthKey] = @(kContentImageWidth);
                 }
             }
         }
